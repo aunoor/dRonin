@@ -47,6 +47,8 @@ SRC += $(BLCOMMONDIR)/main.c
 SRC += $(BLCOMMONDIR)/led_pwm.c
 SRC += $(BLCOMMONDIR)/bl_xfer.c
 
+SRC += $(FLIGHTLIB)/circqueue.c
+
 ## Bootloader (board specific implementations)
 SRC += $(BLBOARDDIR)/pios_board.c
 SRC += $(PIOS)/STM32/pios_usb_board_data.c
@@ -95,6 +97,8 @@ SRC += pios_semaphore.c
 SRC += pios_spi.c
 SRC += pios_irq.c
 SRC += pios_wdg.c
+SRC += pios_usart.c
+SRC += pios_com.c
 
 # List any extra directories to look for include files here.
 #    Each directory must be seperated by a space.

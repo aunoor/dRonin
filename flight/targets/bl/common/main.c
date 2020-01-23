@@ -36,6 +36,10 @@
 #include "bl_messages.h"	/* struct bl_messages */
 #include "bl_xfer.h"		/* bl_xfer_* */
 
+#ifdef BL_BOARD_XTRA
+#include "bl_board_xtra.h"
+#endif
+
 extern void PIOS_Board_Init(void);
 
 #define MSEC_TO_USEC(ms) ((ms) * 1000)

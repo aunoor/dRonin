@@ -79,3 +79,6 @@ androidgcs/gen/
 
 # Ignore simulation/unit-test flash image
 theflash.bin
+
+# Ignore IDE files
+.vscode

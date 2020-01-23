@@ -39,6 +39,10 @@
 
 #include "pios_flash.h"		/* PIOS_FLASH_* */
 
+#ifdef BL_BOARD_XTRA
+#include "bl_board_xtra.h"
+#endif
+
 #define MIN(x,y) ((x) < (y) ? (x) : (y))
 
 static uint32_t bl_compute_partition_crc(uintptr_t partition_id, uint32_t partition_offset, uint32_t length)
