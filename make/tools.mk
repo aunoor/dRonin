@@ -620,7 +620,7 @@ breakpad_clean:
 
 tools_required_breakpad:
 ifeq ($(wildcard $(BREAKPAD_DIR)/*),)
-	$(error "Breakpad not found, please run `make breakpad_install`")
+	$(warning "Breakpad not found, please run `make breakpad_install`")
 else
 	$(info "Breakpad found in $(BREAKPAD_DIR)")
 endif

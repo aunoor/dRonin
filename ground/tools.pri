@@ -13,4 +13,8 @@ DR_QT_MINOR_VERSION=9
 DR_QT_PATCH_VERSION=2
 
 # Must match make/tools.mk
-BREAKPAD = $$TOOLS_DIR/breakpad/20170922
+exists( $$TOOLS_DIR/breakpad/20170922 ) {
+      BREAKPAD = $$TOOLS_DIR/breakpad/20170922
+      DEFINES += USE_BREAKPAD
+}
+

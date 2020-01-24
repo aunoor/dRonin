@@ -13,7 +13,9 @@ SOURCES += \
 
 include(../rpath.pri)
 include(../libs/utils/utils.pri)
-include(../libs/libcrashreporter-qt/libcrashreporter-qt.pri)
+BREAKPAD {
+    include(../libs/libcrashreporter-qt/libcrashreporter-qt.pri)
+}
 include(../libs/runguard/runguard.pri)
 
 HEADERS += \

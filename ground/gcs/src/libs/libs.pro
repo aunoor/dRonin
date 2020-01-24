@@ -8,8 +8,11 @@ SUBDIRS   = \
     utils \
     tlmapcontrol \
     qwt \
-    libcrashreporter-qt \
     runguard
+
+BREAKPAD {
+    SUBDIRS += libcrashreporter-qt
+}
 
 win32 {
 SUBDIRS   += \

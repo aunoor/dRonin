@@ -14,8 +14,9 @@ unix:!macx:!isEmpty(copydata) {
 	QMAKE_EXTRA_TARGETS += bin_install
 }
 
-!equals(QT_MAJOR_VERSION, $$DR_QT_MAJOR_VERSION) | !equals(QT_MINOR_VERSION, $$DR_QT_MINOR_VERSION) | !equals(QT_PATCH_VERSION, $$DR_QT_PATCH_VERSION) {
-    error("Qt $${DR_QT_MAJOR_VERSION}.$${DR_QT_MINOR_VERSION}.$${DR_QT_PATCH_VERSION} required (Qt $${QT_MAJOR_VERSION}.$${QT_MINOR_VERSION}.$${QT_PATCH_VERSION} installed). Please run 'make qt_sdk_install'.")
+#!equals(QT_MAJOR_VERSION, $$DR_QT_MAJOR_VERSION) | !equals(QT_MINOR_VERSION, $$DR_QT_MINOR_VERSION) | !equals(QT_PATCH_VERSION, $$DR_QT_PATCH_VERSION) {
+!equals(QT_MAJOR_VERSION, $$DR_QT_MAJOR_VERSION) | !equals(QT_MINOR_VERSION, $$DR_QT_MINOR_VERSION) {
+    error("Qt $${DR_QT_MAJOR_VERSION}.$${DR_QT_MINOR_VERSION}} required (Qt $${QT_MAJOR_VERSION}.$${QT_MINOR_VERSION}.$${QT_PATCH_VERSION} installed). Please run 'make qt_sdk_install'.")
 }
 
 copydata.file = copydata.pro
