@@ -2,7 +2,7 @@
  ******************************************************************************
  * @addtogroup Targets Target Boards
  * @{
- * @addtogroup SPRF3E SP Racing F3 Evo
+ * @addtogroup SPRF3 SP Racing F3
  * @{
  *
  * @file       board_hw_defs.c 
@@ -48,7 +48,7 @@ static const struct pios_annunc pios_annuncs[] = {
                 .GPIO_PuPd  = GPIO_PuPd_NOPULL,
             },
         },
-        .active_high         = true
+        .active_high         = false
     },
     [PIOS_ANNUNCIATOR_BUZZER] =  {
         .pin                =             {
@@ -61,7 +61,7 @@ static const struct pios_annunc pios_annuncs[] = {
                 .GPIO_PuPd  = GPIO_PuPd_NOPULL,
             },
         },
-        .active_high         = true
+        .active_high         = false
     },
 };
 

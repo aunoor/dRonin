@@ -2,10 +2,10 @@
  ******************************************************************************
  * @addtogroup Targets Target Boards
  * @{
- * @addtogroup SPRF3E SP Racing F3 Evo
+ * @addtogroup SPRF3E SP Racing F3
  * @{
  *
- * @file       sprf3e/board-info/pios_board.h
+ * @file       sprf3/board-info/pios_board.h
  * @author     Tau Labs, http://taulabs.org, Copyright (C) 2012-2013
  * @author     dRonin, http://dRonin.org/, Copyright (C) 2016
  * @brief      Board header file for sprf3e board.
@@ -28,8 +28,8 @@
  */
 
 
-#ifndef STM32F30X_sprf3e_H_
-#define STM32F30X_sprf3e_H_
+#ifndef STM32F30X_sprf3_H_
+#define STM32F30X_sprf3_H_
 
 #include <stdbool.h>
 
@@ -221,9 +221,10 @@ extern ws2811_dev_t pios_ws2811;
 //-------------------------
 // USB
 //-------------------------
-#define PIOS_USB_ENABLED				1 /* Should remove all references to this */
+//#define PIOS_USB_ENABLED				1 /* Should remove all references to this */
 
-#endif /* STM32F30X_sprf3e_H_ */
+
+#endif /* STM32F30X_sprf3_H_ */
 
 
 /**

@@ -2,10 +2,10 @@
  ******************************************************************************
  * @addtogroup Targets Target Boards
  * @{
- * @addtogroup SPRF3E SP Racing F3 Evo
+ * @addtogroup SPRF3 SP Racing F3
  * @{
  *
- * @file       sprf3e/board-info/pios_config.h
+ * @file       sprf3/board-info/pios_config.h
  * @author     Tau Labs, http://taulabs.org, Copyright (C) 2012-2015
  * @author     dRonin, http://dRonin.org/, Copyright (C) 2016
  * @brief      Board specific options that modify PiOS capabilities
@@ -37,11 +37,12 @@
 
 /* Enable/Disable PiOS Modules */
 #define PIOS_INCLUDE_DMA_CB_SUBSCRIBING_FUNCTION
-#define PIOS_INCLUDE_I2C
-#define PIOS_INCLUDE_SPI
+//#define PIOS_INCLUDE_I2C
+//#define PIOS_INCLUDE_SPI
 #define WDG_STATS_DIAGNOSTICS
 
 /* Select the sensors to include */
+#if 0
 #define PIOS_INCLUDE_MPU
 #define PIOS_INCLUDE_MPU_MAG
 #define PIOS_INCLUDE_BMP280
@@ -52,7 +53,7 @@
 /* Com systems to include */
 #define PIOS_INCLUDE_MAVLINK
 #define PIOS_INCLUDE_LIGHTTELEMETRY 
-
+#endif
 
 /* Supported receiver interfaces */
 
@@ -80,9 +81,9 @@
 
 //#define CAMERASTAB_POI_MODE
 
-#define PIOS_INCLUDE_FASTHEAP
-#define PIOS_INCLUDE_WS2811
-#define SYSTEMMOD_RGBLED_SUPPORT
+//#define PIOS_INCLUDE_FASTHEAP
+//#define PIOS_INCLUDE_WS2811
+//#define SYSTEMMOD_RGBLED_SUPPORT
 
 #endif /* PIOS_CONFIG_H */
 

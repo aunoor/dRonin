@@ -2,10 +2,10 @@
  ******************************************************************************
  * @addtogroup Targets Target Boards
  * @{
- * @addtogroup SPRF3E SP Racing F3
+ * @addtogroup SPRF3 SP Racing F3
  * @{
  *
- * @file       sprf3e/board-info/pios_board.c
+ * @file       sprf3/board-info/pios_board.c
  * @author     Tau Labs, http://taulabs.org, Copyright (C) 2012-2014
  * @author     dRonin, http://dRonin.org/, Copyright (C) 2016
  * @brief      The board specific initialization routines
@@ -69,6 +69,8 @@ uintptr_t pios_com_openlog_logging_id;
 
 void PIOS_Board_Init(void)
 {
+//SCB->CPACR |= ((3UL << 10*2)|(3UL << 11*2));
+
 	const struct pios_board_info *bdinfo = &pios_board_info_blob;
 
 #if defined(PIOS_INCLUDE_ANNUNC)
@@ -76,6 +78,9 @@ void PIOS_Board_Init(void)
 	PIOS_Assert(led_cfg);
 	PIOS_ANNUNC_Init(led_cfg);
 #endif	/* PIOS_INCLUDE_ANNUNC */
+
+#undef PIOS_INCLUDE_SPI
+#undef PIOS_INCLUDE_FLASH
 
 #if defined(PIOS_INCLUDE_SPI)
 	pios_spi_t pios_spi_gyro_id;
@@ -117,7 +122,7 @@ void PIOS_Board_Init(void)
 	 * but do it only if there is no debugger connected
 	 */
 	if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) == 0) {
-		PIOS_WDG_Init();
+		//PIOS_WDG_Init();
 	}
 
 	/* Set up pulse timers */
@@ -130,6 +135,7 @@ void PIOS_Board_Init(void)
 	PIOS_TIM_InitClock(&tim_15_cfg);
 	PIOS_TIM_InitClock(&tim_16_cfg);
 	PIOS_TIM_InitClock(&tim_17_cfg);
+
 
 	/* IAP System Setup */
 	PIOS_IAP_Init();
@@ -402,8 +408,10 @@ void PIOS_Board_Init(void)
 	PIOS_GPIO_Init();
 #endif
 
+#if 0
 	/* Make sure we have at least one telemetry link configured or else fail initialization */
-	PIOS_Assert(pios_com_telem_serial_id || pios_com_telem_usb_id);
+	PIOS_Assert(pios_com_telem_serial_id /*|| pios_com_telem_usb_id*/);
+#endif	
 }
 
 /**

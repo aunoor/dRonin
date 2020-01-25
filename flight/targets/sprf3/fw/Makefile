@@ -78,6 +78,8 @@ DEBUG_CM3_DIR_INC = $(DEBUG_CM3_DIR)/inc
 OPUAVOBJINC = $(OPUAVOBJ)/inc
 MAVLINKINC = $(FLIGHTLIB)/mavlink/v1.0/common
 
+#USE_FPU=hard
+
 # optional component libraries
 include $(APPLIBDIR)/ChibiOS/library.mk
 
@@ -174,7 +176,7 @@ CFLAGS += -DDIAG_TASKS
 CDEFS += -DARM_MATH_CM4
 CDEFS += -DARM_MATH_MATRIX_CHECK
 CDEFS += -DARM_MATH_ROUNDING
-CDEFS += -D__FPU_PRESENT=1
+CDEFS += -D__FPU_PRESENT=1 -DCORTEX_USE_FPU=TRUE
 CDEFS += -DUNALIGNED_SUPPORT_DISABLE
 
 # This is not the best place for these.  Really should abstract out

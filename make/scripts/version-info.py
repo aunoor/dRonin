@@ -462,7 +462,7 @@ string given.
         ORIGIN = r.origin(),
         HASH = r.hash(),
         HASH8 = r.hash(8),
-        ANCESTOR16 = r.ancestor(16),
+        ANCESTOR16 = r.ancestor(16, 0),
         ANCESTOR = r.ancestor(),
         TAG = r.tag(''),
         TAG_OR_BRANCH = r.tag(r.branch('unreleased')),

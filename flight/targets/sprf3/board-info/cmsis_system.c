@@ -2,10 +2,10 @@
   ******************************************************************************
   * @addtogroup Targets Target Boards
   * @{
-  * @addtogroup SPRF3E SP Racing F3 Evo
+  * @addtogroup SPRF3 SP Racing F3
   * @{
   *
-  * @file    sprf3e/board-info/cmsis_system.c
+  * @file    sprf3/board-info/cmsis_system.c
   * @author  MCD Application Team
   * @version V1.0.0
   * @date    04-September-2012
